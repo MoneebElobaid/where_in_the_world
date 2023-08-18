@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 
+prepros.config
+
 # testing
 /coverage
 

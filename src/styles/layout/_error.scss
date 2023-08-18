@@ -1,0 +1,10 @@
+@use "../variables/colors" as *;
+.error {
+    height: 100vh;
+    background-color: $dark_mode_background;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

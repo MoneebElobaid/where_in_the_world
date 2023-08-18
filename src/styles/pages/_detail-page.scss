@@ -1,0 +1,113 @@
+@use "../variables/colors" as *;
+@use "../layout/mixins" as *;
+.custom-box {
+    padding: 0.5em 1.2em;
+    width: fit-content;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    .icon {
+        font-size: 1rem;
+    }
+    &.back {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5em;
+    }
+    &.light {
+        @include light-shadow;
+        background-color: $white;
+        color: $light_mode_text;
+    }
+    &.dark {
+        @include dark-shadow;
+        background-color: $dark_mode_elements;
+        color: $white;
+    }
+}
+.details {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 3em;
+    @media (min-width: 768px) {
+        flex-direction: row;
+        align-items: center;
+    }
+    &.light {
+        color: $light_mode_text;
+        p {
+            color: $light_mode_input;
+        }
+        span {
+            color: $light_mode_text;
+        }
+    }
+    &.dark {
+        color: $white;
+        p {
+            color: #c9c9c9;
+        }
+        span {
+            color: $white;
+        }
+    }
+    .image {
+        flex-basis: 70%;
+    }
+    img {
+        width: 100%;
+    }
+    .country-name {
+        margin-bottom: 1em;
+        font-size: 1.8rem;
+    }
+    .country-detail {
+        margin-bottom: 3em;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 3em;
+        @media (min-width: 768px) {
+            flex-direction: row;
+            font-size: 0.75rem;
+        }
+        p {
+            line-height: 2;
+        }
+        span {
+            font-weight: bold;
+        }
+        > * {
+            flex-basis: 50%;
+        }
+    }
+}
+.border-countries {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+    @media (min-width: 768px) {
+        flex-direction: row;
+        align-items: center;
+    }
+    .title {
+        font-weight: bold;
+        &.light {
+            color: $light_mode_input;
+        }
+        &.dark {
+            color: $white;
+        }
+        @media (min-width: 768px) {
+            font-size: 0.75rem;
+        }
+    }
+    .borders {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75em;
+    }
+}

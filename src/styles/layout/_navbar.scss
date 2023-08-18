@@ -1,0 +1,33 @@
+@use "../variables/colors" as *;
+.navbar {
+    padding: 1.5em 0;
+    margin-bottom: 1.5em;
+    &.dark {
+        background-color: $dark_mode_elements;
+        box-shadow: 5px 0 10px 0 rgba(0, 0, 0, 0.4);
+    }
+    &.light {
+        background-color: $white;
+        box-shadow: 5px 0 10px 0 #ccc;
+        .switch-mode .icon {
+            color: black;
+        }
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo {
+        font-weight: bold;
+    }
+    .switch-mode {
+        .icon {
+            margin-right: 0.75em;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        font-weight: 500;
+        font-size: 0.9em;
+    }
+}

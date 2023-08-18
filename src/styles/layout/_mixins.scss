@@ -1,0 +1,6 @@
+@mixin light-shadow {
+    box-shadow: 0 0 7px 0 #dfdede;
+}
+@mixin dark-shadow {
+    box-shadow: 0 0 10px 0 #36323254;
+}

@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
+import Layout from './layout/Layout';
+import HomePage, { loader as homePageLoader } from './layout/HomePage';
+import Error from './components/Error';
+import DetailPage, { loader as detailPageLoader} from './layout/DetailPage';
+
+const router = createBrowserRouter(createRoutesFromElements(
+  <Route path="/" element={<Layout />} errorElement={<Error />}>
+    <Route index element={<HomePage />} loader={homePageLoader} />
+    <Route path="/:country" element={<DetailPage />} loader={detailPageLoader} />
+  </Route>
+));
+
+function scrollToTop() {
+  window.scrollTo(0, 0);
+}
+
+router.subscribe((toState, fromState) => {
+  if(fromState) {
+    scrollToTop();
+  }
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RouterProvider router={router} />
   );
 }
 

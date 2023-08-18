@@ -1,0 +1,43 @@
+@use "../variables/colors" as *;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Nunito Sans", sans-serif;
+}
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    @media (min-width: 768px) {
+        width: 750px;
+    }
+    @media (min-width: 992px) {
+        width: 970px;
+    }
+    @media (min-width: 1200px) {
+        width: 1170px;
+    }
+}
+.layout {
+    min-height: 100vh;
+    padding-bottom: 3em;
+    &.dark {
+        background-color: $dark_mode_background;
+        color: $white;
+    }
+    &.light {
+        background-color: $light_mode_background;
+        color: $light_mode_text;
+    }
+}
+a {
+    color: unset;
+    text-decoration: none;
+}
+a:visited {
+    color: unset;
+}
