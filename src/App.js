@@ -3,6 +3,7 @@ import Layout from './layout/Layout';
 import HomePage, { loader as homePageLoader } from './layout/HomePage';
 import Error from './components/Error';
 import DetailPage, { loader as detailPageLoader} from './layout/DetailPage';
+import "./server";
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={<Layout />} errorElement={<Error />}>
